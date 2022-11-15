@@ -68,6 +68,10 @@ def bulletP(x,y):
     screen.blit(bullet,(x,y))
 def player(x,y):
     screen.blit(player_image,(x,y))
+def restart(x,y):
+    res=font.render("TO play Again Quit & Restart Again ",True,(240,140,220))
+    screen.blit(res, (x,y))
+
 bulletY=playerY-30
 while running:
 
@@ -129,9 +133,10 @@ while running:
             for j in range(enemyN):
                 enemyY[j]=2000
             game_over(100,100)
+            restart(80, 200)
             break
 
-            running=False
+            
         d[i]= math.sqrt((enemyX[i]-bulletX)**2 + (enemyY[i]-bulletY)**2)
 
 
@@ -150,6 +155,7 @@ while running:
             for j in range(enemyN):
                 enemyY[j] = 2000
             game_over(100, 100)
+            restart(50,200)
             break
 
 
